@@ -28,7 +28,7 @@ wordForm.addEventListener("submit", async (e) => {
   }
 
   if (buttonValue === "store") {
-    fetch("http://localhost:3000/definitions", {
+    fetch("https://lab6backend-uozr.onrender.com/definitions", {
       method: "POST",
       body: JSON.stringify({
         word: word,
@@ -66,7 +66,7 @@ wordForm.addEventListener("submit", async (e) => {
         console.error("Error:", error);
       });
   } else if(buttonValue === "delete"){
-    fetch(`http://localhost:3000/delete?word=${word}`, {
+    fetch(`https://lab6backend-uozr.onrender.com/delete?word=${word}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -89,7 +89,7 @@ wordForm.addEventListener("submit", async (e) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch data from the server
-  fetch("http://localhost:3000/languages")
+  fetch("https://lab6backend-uozr.onrender.com/languages")
     .then((response) => {
       if (!response.ok) {
         throw new Error(messages.NETWORK);
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const update = (word, definition, word_language, definition_language) => {
   console.log("update");
-  fetch("http://localhost:3000/update", {
+  fetch("https://lab6backend-uozr.onrender.com/update", {
     method: "PATCH",
     body: JSON.stringify({
       word: word,

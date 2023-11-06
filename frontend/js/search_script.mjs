@@ -1,4 +1,4 @@
-messages = require("./messages.mjs");
+import messages from "./messages.mjs";
 
 const getWordFormElement = document.getElementById("getWordForm");
 
@@ -7,7 +7,7 @@ getWordFormElement.addEventListener("submit", (e) => {
     const formData = new FormData(getWordFormElement);
     const word = formData.get("word").toLowerCase();
 
-    fetch(`http://localhost:3000/definitions?word=${word}`)
+    fetch(`https://lab6backend-uozr.onrender.com/definitions?word=${word}`)
         .then((response) => response.json())
         .then((data) => {
             if (data.msg === messages.EXISTS) {
@@ -27,7 +27,7 @@ getWordFormElement.addEventListener("submit", (e) => {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch data from the server
-    fetch("http://localhost:3000/languages")
+    fetch("https://lab6backend-uozr.onrender.com/languages")
       .then((response) => {
         if (!response.ok) {
           throw new Error(messages.NETWORK);
