@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write or delete page</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <h1>Write or delete a word</h1>
+    <form id="wordForm">
+      <div class="mb-3">
+        <label for="wordInput">Word</label>
+        <div class="mb-3" style="display: flex; flex-direction: row">
+          <input type="text" class="form-control" id="wordInput" name="word" />
+          <div style="padding: 2px; margin: 5px">
+            <select id="dropdown1">
+
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="definitionInput">Definition</label>
+        <div class="mb-3" style="display: flex; flex-direction: row">
+          <input
+            type="text"
+            class="form-control"
+            id="definitionInput"
+            name="definition"
+          />
+          <div style="padding: 2px; margin: 5px">
+            <select id="dropdown2">
+              <!-- Options will be added here -->
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="btn" name="store" type="submit" value="store">Store</button>
+      <button class="btn" name="delete" type="submit" value="delete">Delete</button>
+    </form>
+    <h3 id="postres" class="text-center"></h3>
+    <a href="index.html">Back to Index</a>
+    <script type="module" src="js/store_script.mjs"></script>
+  </body>
+</html>
